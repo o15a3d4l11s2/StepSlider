@@ -118,6 +118,12 @@ void withoutCAAnimation(withoutAnimationBlock code)
     if (!_sliderCircleColor) {
         _sliderCircleColor = [UIColor whiteColor];
     }
+    if (!_sliderCircleBorderColor) {
+        _sliderCircleBorderColor = [UIColor whiteColor];
+    }
+    if (!_sliderCircleBorderWidth) {
+        _sliderCircleBorderWidth = 0.f;
+    }
     if (!_labelColor) {
         _labelColor = [UIColor whiteColor];
     }
@@ -198,6 +204,8 @@ void withoutCAAnimation(withoutAnimationBlock code)
         _sliderCircleLayer.frame     = CGRectMake(0.f, 0.f, sliderFrameSide, sliderFrameSide);
         _sliderCircleLayer.path      = [UIBezierPath bezierPathWithRoundedRect:sliderDrawRect cornerRadius:sliderFrameSide / 2].CGPath;
         _sliderCircleLayer.fillColor = [self.sliderCircleColor CGColor];
+        _sliderCircleLayer.borderColor = self.sliderCircleBorderColor.CGColor;
+        _sliderCircleLayer.borderWidth = self.sliderCircleBorderWidth;
     }
     _sliderCircleLayer.position = CGPointMake(contentFrame.origin.x + stepWidth * self.index, CGRectGetMidY(contentFrame));
 

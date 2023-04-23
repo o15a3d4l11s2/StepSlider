@@ -60,6 +60,11 @@ IB_DESIGNABLE
 @property (nonatomic) IBInspectable CGFloat sliderCircleRadius;
 
 /**
+ *  Width of the slider main wheel border.
+ */
+@property (nonatomic) IBInspectable CGFloat sliderCircleBorderWidth;
+
+/**
  *  A Boolean value that determines whether user interaction with dots are ignored. Default value is `YES`.
  */
 @property (nonatomic, getter=isDotsInteractionEnabled) IBInspectable BOOL dotsInteractionEnabled;
@@ -74,6 +79,11 @@ IB_DESIGNABLE
  *  Color of the slider main wheel.
  */
 @property (nonatomic, strong) IBInspectable UIColor *sliderCircleColor;
+
+/**
+ *  Color of the slider main wheel bolder.
+ */
+@property (nonatomic, strong) IBInspectable UIColor *sliderCircleBorderColor;
 
 /**
  *  Image for slider main wheel.
