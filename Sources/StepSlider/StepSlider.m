@@ -200,12 +200,12 @@ void withoutCAAnimation(withoutAnimationBlock code)
         CGFloat sliderFrameSide = fmaxf(self.sliderCircleRadius * 2.f, 44.f);
         CGRect  sliderDrawRect  = CGRectMake((sliderFrameSide - sliderDiameter) / 2.f, (sliderFrameSide - sliderDiameter) / 2.f, sliderDiameter, sliderDiameter);
         
-        _sliderCircleLayer.contents  = nil;
-        _sliderCircleLayer.frame     = CGRectMake(0.f, 0.f, sliderFrameSide, sliderFrameSide);
-        _sliderCircleLayer.path      = [UIBezierPath bezierPathWithRoundedRect:sliderDrawRect cornerRadius:sliderFrameSide / 2].CGPath;
-        _sliderCircleLayer.fillColor = [self.sliderCircleColor CGColor];
-        _sliderCircleLayer.borderColor = self.sliderCircleBorderColor.CGColor;
-        _sliderCircleLayer.borderWidth = self.sliderCircleBorderWidth;
+        _sliderCircleLayer.contents    = nil;
+        _sliderCircleLayer.frame       = CGRectMake(0.f, 0.f, sliderFrameSide, sliderFrameSide);
+        _sliderCircleLayer.path        = [UIBezierPath bezierPathWithRoundedRect:sliderDrawRect cornerRadius:sliderFrameSide / 2].CGPath;
+        _sliderCircleLayer.fillColor   = [self.sliderCircleColor CGColor];
+        _sliderCircleLayer.strokeColor = [self.sliderCircleBorderColor CGColor];
+        _sliderCircleLayer.lineWidth   = self.sliderCircleBorderWidth;
     }
     _sliderCircleLayer.position = CGPointMake(contentFrame.origin.x + stepWidth * self.index, CGRectGetMidY(contentFrame));
 
